@@ -1,12 +1,12 @@
 import React, { useState, useMemo } from 'react';
-import { Plus, Pencil, Trash2, AlertCircle } from 'lucide-react';
+import { IndianRupeeIcon, Plus, Pencil, Trash2, AlertCircle } from 'lucide-react';
 import type { InventoryItem, SortDirection } from './types';
 
 function App() {
   const [items, setItems] = useState<InventoryItem[]>([
-    { id: '1', name: 'Laptop', category: 'Electronics', quantity: 5, price: 999.99, description: 'High-performance laptop' },
-    { id: '2', name: 'Desk Chair', category: 'Furniture', quantity: 12, price: 199.99, description: 'Ergonomic office chair' },
-    { id: '3', name: 'Printer', category: 'Electronics', quantity: 3, price: 299.99, description: 'Color laser printer' },
+    { id: '1', name: 'Laptop', category: 'Electronics', quantity: 5, price: 75000, description: 'High-performance laptop' },
+    { id: '2', name: 'Desk Chair', category: 'Furniture', quantity: 12, price: 18000, description: 'Ergonomic office chair' },
+    { id: '3', name: 'Printer', category: 'Electronics', quantity: 3, price: 26000, description: 'Color laser printer' },
   ]);
   
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -116,7 +116,7 @@ function App() {
                     </td>
                     <td className="px-6 py-4">{item.category}</td>
                     <td className="px-6 py-4">{item.quantity}</td>
-                    <td className="px-6 py-4">${item.price.toFixed(2)}</td>
+                    <td className="px-6 py-4 flex items-center"><IndianRupeeIcon size={15}/>{item.price.toFixed(2)}</td>
                     <td className="px-6 py-4">{item.description}</td>
                     <td className="px-6 py-4">
                       <div className="flex gap-2">
